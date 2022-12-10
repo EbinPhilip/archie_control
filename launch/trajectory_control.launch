@@ -13,7 +13,6 @@
 
     <node name="archie_robot_hw" pkg="archie_control" type="archie_robot_hw_node" output="screen" />
     <node pkg="sting_gripper_action" type="gripper_action_node.py" name="gripper_action_node" />    
-    <node name = "ros_serial_node" pkg="rosserial_python" ns="$(arg ns_)" type="serial_node.py" args="_port:=$(arg port) _baud:=$(arg baud)"/>
 
     <node
         name="controller_spawner"

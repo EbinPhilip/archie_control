@@ -63,5 +63,5 @@ controllers:
         baud_rate: 57600
       camera_joint_controller:
         controller_id: 1
-        port: /dev/ttyUSB1
+        port: /dev/camera_u2d2
         baud_rate: 57600

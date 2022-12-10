@@ -1,4 +1,4 @@
-scorpius_arm_controller:
+archie_arm_controller:
     type: joint_path_tracking_controller/JointPathTrackingController
     joints:
         - name: shoulder_lateral
@@ -54,15 +54,6 @@ scorpius_arm_controller:
           max_rpm: 3.0
           waypoint_tolerance: 0.12
           goal_tolerance: 0.06
-
-        - name: slider_joint
-          min_pos: 0.0
-          max_pos: 0.367
-          min_speed: 0.001
-          default_speed: 0.008
-          max_speed: 0.024
-          waypoint_tolerance: 0.012 #0.034
-          goal_tolerance:     0.00001 #0.02
 
 sting_gripper_controller:
     type: position_controllers/JointPositionController
