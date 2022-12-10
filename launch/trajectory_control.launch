@@ -1,0 +1,27 @@
+<launch>
+    <arg name="ns_" default="archie_robot_hw" />
+    <arg name="port" default="/dev/linear_actuator" />
+    <arg name="baud" default="115200" />
+
+    <include
+        file="$(find archie_control)/launch/load_config.launch">
+        <arg name="ns_" value="$(arg ns_)" />
+    </include>
+    
+    <rosparam file="$(find archie_control)/config/trajectory_control.yaml" command="load" />
+    <rosparam file="$(find archie_control)/config/joint_state_controller.yaml" command="load" />
+
+    <node name="archie_robot_hw" pkg="archie_control" type="archie_robot_hw_node" output="screen" />
+    <node pkg="sting_gripper_action" type="gripper_action_node.py" name="gripper_action_node" />    
+    <node name = "ros_serial_node" pkg="rosserial_python" ns="$(arg ns_)" type="serial_node.py" args="_port:=$(arg port) _baud:=$(arg baud)"/>
+
+    <node
+        name="controller_spawner"
+        pkg="controller_manager"
+        type="spawner"
+        respawn="false"
+        output="screen"
+        args="joint_state_controller
+        archie_arm_controller
+        sting_gripper_controller" />
+</launch>

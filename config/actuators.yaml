@@ -1,0 +1,67 @@
+actuators:
+  - package: dynamixel_x_controller
+    class: Dynamixel_X::Dynamixel_X_Actuator_Config_Parser
+    config:
+      shoulder_lateral_actuator:
+        servo_id: 1
+        controller_name: archie_dxl
+        cw_limit_deg: -180.0
+        ccw_limit_deg: 180.0
+        profile_acceleration: 1 
+      sholder_vertical_actuator:
+        servo_id: 2
+        controller_name: archie_dxl
+        cw_limit_deg: -180.0
+        ccw_limit_deg: 180.0
+        profile_acceleration: 1 
+      elbow_actuator:
+        servo_id: 3
+        controller_name: archie_dxl
+        cw_limit_deg: -180.0
+        ccw_limit_deg: 180.0
+        profile_acceleration: 1
+      lower_arm_yaw_actuator:
+        servo_id: 4
+        controller_name: archie_dxl
+        cw_limit_deg: -180.0
+        ccw_limit_deg: 180.0
+        profile_acceleration: 1
+      lower_arm_vertical_actuator:
+        servo_id: 5
+        controller_name: archie_dxl
+        cw_limit_deg: -180.0
+        ccw_limit_deg: 180.0
+        profile_acceleration: 1
+      gripper_yaw_actuator:
+        servo_id: 6
+        controller_name: archie_dxl
+        cw_limit_deg: -180.0
+        ccw_limit_deg: 180.0
+        profile_acceleration: 1
+      gripper_actuator:
+        servo_id: 7
+        controller_name: archie_dxl
+        zero_deg: 0.0
+        cw_limit_deg: 0.0
+        ccw_limit_deg: 360.0
+        profile_acceleration: 1
+      camera_joint_actuator:
+        servo_id: 1
+        controller_name: camera_joint_controller
+        # zero_deg: 0.0
+        cw_limit_deg: -180.0
+        ccw_limit_deg: 180.0
+        max_effort_value: 1000.0
+
+controllers:
+  - package: dynamixel_x_controller
+    class: Dynamixel_X::Dynamixel_X_Controller_Config_Parser
+    config:
+      archie_dxl:
+        controller_id: 1
+        port: /dev/u2d2
+        baud_rate: 57600
+      camera_joint_controller:
+        controller_id: 1
+        port: /dev/ttyUSB1
+        baud_rate: 57600

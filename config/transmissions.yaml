@@ -1,0 +1,54 @@
+transmissions:
+  shoulder_lateral_transmission:
+    joints:
+      - shoulder_lateral
+    actuators:
+      - shoulder_lateral_actuator
+    type: transmission_interface::SimpleTransmission
+  sholder_vertical_transmission:
+    joints:
+      - sholder_vertical
+    actuators:
+      - sholder_vertical_actuator
+    type: transmission_interface::SimpleTransmission
+  elbow_transmission:
+    joints:
+      - elbow
+    actuators:
+      - elbow_actuator
+    type: transmission_interface::SimpleTransmission
+  lower_arm_yaw_transmission:
+    joints:
+      - lower_arm_yaw
+    actuators:
+      - lower_arm_yaw_actuator
+    type: transmission_interface::SimpleTransmission
+  lower_arm_vertical_transmission:
+    joints:
+      - lower_arm_vertical
+    actuators:
+      - lower_arm_vertical_actuator
+    type: transmission_interface::SimpleTransmission
+  gripper_yaw_transmission:
+    joints:
+      - gripper_yaw
+    actuators:
+      - gripper_yaw_actuator
+    type: transmission_interface::SimpleTransmission
+  gripper_transmission:
+    joints:
+      - left_finger_joint
+    actuators:
+      - gripper_actuator
+    type: Sting::Gripper_Transmission_Loader
+    package: sting_gripper_transmission
+    reduction: 76.4248517942
+  camera_joint_transmission:
+    joints:
+      - camera_tilt_joint
+    actuators:
+      - camera_joint_actuator
+    type: transmission_interface::SimpleTransmission
+
+
+

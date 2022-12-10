@@ -1,0 +1,28 @@
+joints:
+  shoulder_lateral:
+    type: PosVelControlledJoint
+    default_rpm: 5.0
+  sholder_vertical:
+    type: PosVelControlledJoint
+    default_rpm: 5.0
+  elbow:
+    type: PosVelControlledJoint
+    default_rpm: 5.0
+  lower_arm_yaw:
+    type: PosVelControlledJoint
+    default_rpm: 5.0
+  lower_arm_vertical:
+    type: PosVelControlledJoint
+    default_rpm: 5.0
+  gripper_yaw:
+    type: PosVelControlledJoint
+    default_rpm: 5.0
+  left_finger_joint:
+    type: PositionControlledJoint
+    default_rpm: 10.0
+  slider_joint:
+    type: PosVelControlledJoint
+    default_speed: 0.012 # 2400 micro steps/s : 2400*(1.8/8)*(0.008/360) 
+  camera_tilt_joint:
+    type: PositionControlledJoint
+    default_rpm: 20.0

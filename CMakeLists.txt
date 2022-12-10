@@ -2,12 +2,14 @@ cmake_minimum_required(VERSION 3.0.2)
 project(archie_control)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
-# add_compile_options(-std=c++11)
+add_compile_options(-std=c++11)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED)
+find_package(catkin REQUIRED
+    configurable_control_hw
+)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -100,8 +102,9 @@ find_package(catkin REQUIRED)
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES archie_control
-#  CATKIN_DEPENDS other_catkin_pkg
+#  LIBRARIES
+ CATKIN_DEPENDS 
+    configurable_control_hw
 #  DEPENDS system_lib
 )
 
@@ -113,7 +116,14 @@ catkin_package(
 ## Your package locations should be listed before other locations
 include_directories(
 # include
-# ${catkin_INCLUDE_DIRS}
+${catkin_INCLUDE_DIRS}
+)
+
+add_executable(archie_robot_hw_node 
+src/archie_robot_hw_node.cpp
+)
+target_link_libraries(archie_robot_hw_node
+  ${catkin_LIBRARIES}
 )
 
 ## Declare a C++ library

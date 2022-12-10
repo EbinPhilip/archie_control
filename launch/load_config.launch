@@ -1,0 +1,8 @@
+<launch>
+    <arg name="ns_" default="archie_robot_hw" />
+
+    <rosparam file="$(find archie_control)/config/actuators.yaml" command="load" ns="$(arg ns_)/"/>
+    <rosparam file="$(find archie_control)/config/joints_pos_vel.yaml" command="load" ns="$(arg ns_)/"/>
+    <rosparam file="$(find archie_control)/config/transmissions.yaml" command="load" ns="$(arg ns_)/"/>
+    <rosparam file="$(find archie_control)/config/gripper.yaml" command="load"/>
+</launch>
